@@ -4,6 +4,8 @@ RSpec.describe Restaurant, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:distance_to_joeys) }
+
     it { should have_many(:dishes) }
 
     end
