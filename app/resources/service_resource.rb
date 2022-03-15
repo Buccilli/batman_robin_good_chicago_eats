@@ -6,6 +6,8 @@ class ServiceResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :restaurants
+
   # Indirect associations
 
 end

@@ -15,6 +15,8 @@ class RestaurantResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :service
+
   has_many   :distance_to_joeys
 
   has_many   :dishes
