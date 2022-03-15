@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "restaurants#index"
   resources :services
   resources :users
   resources :distance_to_joeys
