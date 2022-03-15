@@ -1,0 +1,31 @@
+<% was_validated = service.errors.any? %>
+
+<%= form_with(model: service, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <!-- Label and input for server_name start -->
+  <div class="form-group">
+    <% server_name_class = "form-control" %>
+    <% server_name_was_invalid = service.errors.include?(:server_name) %>
+
+    <% if was_validated %>
+      <% if server_name_was_invalid %>
+        <% server_name_class << " is-invalid" %>
+      <% else %>
+        <% server_name_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :server_name %>
+    <!-- Input for server_name start -->
+    <%= f.text_field :server_name, class: server_name_class, placeholder: "Enter server name" %>
+    <!-- Input for server_name end -->
+    <% if server_name_was_invalid %>
+      <% service.errors.full_messages_for(:server_name).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for server_name end -->
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>
