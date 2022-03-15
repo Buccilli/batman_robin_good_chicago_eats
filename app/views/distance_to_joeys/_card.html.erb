@@ -7,7 +7,11 @@
     <dl class="mb-1">
       <dt>Restaurant</dt>
       <!-- Display restaurant_id start -->
-      <dd><%= distance_to_joey.restaurant_id %></dd>
+      <dd>
+        <% if @distance_to_joey.restaurant.present? %>
+          <%= link_to distance_to_joey.restaurant, distance_to_joey.restaurant %>
+        <% end %>
+      </dd>
       <!-- Display restaurant_id end -->
 
       <dt>Minutes walking</dt>

@@ -42,7 +42,11 @@
 
       <dt>Service</dt>
       <!-- Display service_id start -->
-      <dd><%= restaurant.service_id %></dd>
+      <dd>
+        <% if @restaurant.service.present? %>
+          <%= link_to restaurant.service, restaurant.service %>
+        <% end %>
+      </dd>
       <!-- Display service_id end -->
 
       <dt>Added by</dt>
