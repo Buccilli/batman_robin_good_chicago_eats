@@ -198,7 +198,7 @@
 
     <%= f.label :service_id %>
     <!-- Input for service_id start -->
-    <%= f.number_field :service_id, class: service_class, placeholder: "Enter service" %>
+    <%= f.collection_select :service_id, Service.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for service_id end -->
     <% if service_was_invalid %>
       <% restaurant.errors.full_messages_for(:service).each do |message| %>
