@@ -27,11 +27,7 @@
       <dd><%= restaurant.neighborhood %></dd>
 
       <dt>Service</dt>
-      <dd>
-        <% if @restaurant.service.present? %>
-          <%= link_to restaurant.service, restaurant.service %>
-        <% end %>
-      </dd>
+      <dd><%= restaurant.service_id %></dd>
 
       <dt>Added by</dt>
       <dd><%= restaurant.added_by %></dd>

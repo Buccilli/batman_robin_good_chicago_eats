@@ -168,7 +168,7 @@
     <% end %>
 
     <%= f.label :service_id %>
-    <%= f.collection_select :service_id, Service.all, :id, :to_s, {}, class: "form-control" %>
+    <%= f.number_field :service_id, class: service_class, placeholder: "Enter service" %>
     <% if service_was_invalid %>
       <% restaurant.errors.full_messages_for(:service).each do |message| %>
         <div class="invalid-feedback d-flex">
