@@ -6,33 +6,23 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Must get</dt>
-      <!-- Display must_get start -->
       <dd><%= dish.must_get %></dd>
-      <!-- Display must_get end -->
 
       <dt>Never ever again</dt>
-      <!-- Display never_ever_again start -->
       <dd><%= dish.never_ever_again %></dd>
-      <!-- Display never_ever_again end -->
 
       <dt>Restaurant</dt>
-      <!-- Display restaurant_id start -->
       <dd>
         <% if @dish.restaurant.present? %>
           <%= link_to dish.restaurant, dish.restaurant %>
         <% end %>
       </dd>
-      <!-- Display restaurant_id end -->
 
       <dt>Distance to joey</dt>
-      <!-- Display distance_to_joey_id start -->
       <dd><%= dish.distance_to_joey_id %></dd>
-      <!-- Display distance_to_joey_id end -->
 
       <dt>Added by</dt>
-      <!-- Display added_by start -->
       <dd><%= dish.added_by %></dd>
-      <!-- Display added_by end -->
 
     </dl>
 
@@ -41,21 +31,17 @@
         <%= link_to_show_or_back dish, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link dish start -->
       <div class="col">
         <%= link_to edit_dish_url(dish), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link dish end -->
 
-      <!-- Delete link dish start -->
       <div class="col">
         <%= link_to dish, method: :delete, data: { confirm: "Do you really want to delete this dish?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link dish end -->
     </div>
   </div>
 

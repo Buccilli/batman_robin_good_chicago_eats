@@ -6,9 +6,7 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Server name</dt>
-      <!-- Display server_name start -->
       <dd><%= service.server_name %></dd>
-      <!-- Display server_name end -->
 
     </dl>
 
@@ -17,21 +15,17 @@
         <%= link_to_show_or_back service, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link service start -->
       <div class="col">
         <%= link_to edit_service_url(service), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link service end -->
 
-      <!-- Delete link service start -->
       <div class="col">
         <%= link_to service, method: :delete, data: { confirm: "Do you really want to delete this service?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link service end -->
     </div>
   </div>
 

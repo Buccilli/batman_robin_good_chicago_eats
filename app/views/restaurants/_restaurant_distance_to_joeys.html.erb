@@ -10,24 +10,18 @@
   <ul class="list-group list-group-flush">
     <% @restaurant.distance_to_joeys.each do |distance_to_joey| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <%= link_to distance_to_joey, distance_to_joey %>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%= link_to distance_to_joey, method: :delete, data: { confirm: "Do you really want to delete this distance_to_joey" } do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="restaurant_distance_to_joeys_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "restaurants/restaurant_distance_to_joeys_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

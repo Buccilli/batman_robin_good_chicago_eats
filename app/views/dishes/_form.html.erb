@@ -1,7 +1,6 @@
 <% was_validated = dish.errors.any? %>
 
 <%= form_with(model: dish, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for must_get start -->
   <div class="form-group">
     <% must_get_class = "form-control" %>
     <% must_get_was_invalid = dish.errors.include?(:must_get) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :must_get %>
-    <!-- Input for must_get start -->
     <%= f.text_field :must_get, class: must_get_class, placeholder: "Enter must get" %>
-    <!-- Input for must_get end -->
     <% if must_get_was_invalid %>
       <% dish.errors.full_messages_for(:must_get).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for must_get end -->
-  <!-- Label and input for never_ever_again start -->
   <div class="form-group">
     <% never_ever_again_class = "form-control" %>
     <% never_ever_again_was_invalid = dish.errors.include?(:never_ever_again) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :never_ever_again %>
-    <!-- Input for never_ever_again start -->
     <%= f.text_field :never_ever_again, class: never_ever_again_class, placeholder: "Enter never ever again" %>
-    <!-- Input for never_ever_again end -->
     <% if never_ever_again_was_invalid %>
       <% dish.errors.full_messages_for(:never_ever_again).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,8 +45,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for never_ever_again end -->
-  <!-- Label and input for restaurant_id start -->
   <div class="form-group">
     <% restaurant_class = "form-control" %>
     <% restaurant_was_invalid = dish.errors.include?(:restaurant) %>
@@ -67,9 +58,7 @@
     <% end %>
 
     <%= f.label :restaurant_id %>
-    <!-- Input for restaurant_id start -->
     <%= f.collection_select :restaurant_id, Restaurant.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for restaurant_id end -->
     <% if restaurant_was_invalid %>
       <% dish.errors.full_messages_for(:restaurant).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -78,8 +67,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for restaurant_id end -->
-  <!-- Label and input for distance_to_joey_id start -->
   <div class="form-group">
     <% distance_to_joey_class = "form-control" %>
     <% distance_to_joey_was_invalid = dish.errors.include?(:distance_to_joey) %>
@@ -93,9 +80,7 @@
     <% end %>
 
     <%= f.label :distance_to_joey_id %>
-    <!-- Input for distance_to_joey_id start -->
     <%= f.number_field :distance_to_joey_id, class: distance_to_joey_class, placeholder: "Enter distance to joey" %>
-    <!-- Input for distance_to_joey_id end -->
     <% if distance_to_joey_was_invalid %>
       <% dish.errors.full_messages_for(:distance_to_joey).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -104,8 +89,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for distance_to_joey_id end -->
-  <!-- Label and input for added_by start -->
   <div class="form-group">
     <% added_by_class = "form-control" %>
     <% added_by_was_invalid = dish.errors.include?(:added_by) %>
@@ -119,9 +102,7 @@
     <% end %>
 
     <%= f.label :added_by %>
-    <!-- Input for added_by start -->
     <%= f.number_field :added_by, class: added_by_class, placeholder: "Enter added by" %>
-    <!-- Input for added_by end -->
     <% if added_by_was_invalid %>
       <% dish.errors.full_messages_for(:added_by).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -130,6 +111,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for added_by end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>

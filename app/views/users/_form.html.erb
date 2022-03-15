@@ -1,7 +1,6 @@
 <% was_validated = user.errors.any? %>
 
 <%= form_with(model: user, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for liked_dishes start -->
   <div class="form-group">
     <% liked_dish_class = "form-control" %>
     <% liked_dish_was_invalid = user.errors.include?(:liked_dish) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :liked_dishes %>
-    <!-- Input for liked_dishes start -->
     <%= f.text_field :liked_dishes, class: liked_dish_class, placeholder: "Enter liked dish" %>
-    <!-- Input for liked_dishes end -->
     <% if liked_dish_was_invalid %>
       <% user.errors.full_messages_for(:liked_dish).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for liked_dishes end -->
-  <!-- Label and input for desire_to_go_to_restaurant start -->
   <div class="form-group">
     <% desire_to_go_to_restaurant_class = "form-control" %>
     <% desire_to_go_to_restaurant_was_invalid = user.errors.include?(:desire_to_go_to_restaurant) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :desire_to_go_to_restaurant %>
-    <!-- Input for desire_to_go_to_restaurant start -->
     <%= f.number_field :desire_to_go_to_restaurant, class: desire_to_go_to_restaurant_class, placeholder: "Enter desire to go to restaurant" %>
-    <!-- Input for desire_to_go_to_restaurant end -->
     <% if desire_to_go_to_restaurant_was_invalid %>
       <% user.errors.full_messages_for(:desire_to_go_to_restaurant).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,6 +45,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for desire_to_go_to_restaurant end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>

@@ -1,52 +1,30 @@
-<!-- Form dish start -->
 <%= form_with(model: @dish, local: true) do |f| %>
-<!-- Form dish end -->
 
-  <!-- Label and input for must_get start -->
   <div class="form-group">
     <%= f.label :must_get %>
 
-    <!-- Input for must_get start -->
     <%= f.text_field :must_get, class: "form-control" %>
-    <!-- Input for must_get end -->
   </div>
-  <!-- Label and input for must_get end -->
 
-  <!-- Label and input for never_ever_again start -->
   <div class="form-group">
     <%= f.label :never_ever_again %>
 
-    <!-- Input for never_ever_again start -->
     <%= f.text_field :never_ever_again, class: "form-control" %>
-    <!-- Input for never_ever_again end -->
   </div>
-  <!-- Label and input for never_ever_again end -->
 
-  <!-- Label and input for restaurant_id start -->
-  <!-- Input for restaurant_id start -->
   <%= f.hidden_field :restaurant_id, value: @restaurant.id %>
-  <!-- Input for restaurant_id end -->
-  <!-- Label and input for restaurant_id end -->
 
-  <!-- Label and input for distance_to_joey_id start -->
   <div class="form-group">
     <%= f.label :distance_to_joey_id %>
 
-    <!-- Input for distance_to_joey_id start -->
     <%= f.text_field :distance_to_joey_id, class: "form-control" %>
-    <!-- Input for distance_to_joey_id end -->
   </div>
-  <!-- Label and input for distance_to_joey_id end -->
 
-  <!-- Label and input for added_by start -->
   <div class="form-group">
     <%= f.label :added_by %>
 
-    <!-- Input for added_by start -->
     <%= f.text_field :added_by, class: "form-control" %>
-    <!-- Input for added_by end -->
   </div>
-  <!-- Label and input for added_by end -->
 
   <%= f.submit "Create dish", class: "btn btn-block btn-outline-secondary" %>
 <% end %>
