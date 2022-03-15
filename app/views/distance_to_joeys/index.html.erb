@@ -34,6 +34,10 @@
       <div class="list-group list-group-flush">
         <%= render collection: @distance_to_joeys, partial: "list_item", as: :distance_to_joey %>
       </div>
+      <div class="card-footer d-flex justify-content-center">
+        <%= paginate @distance_to_joeys, theme: 'twitter-bootstrap-4' %>
+      </div>
+
     </div>
   </div>
 </div>

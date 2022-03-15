@@ -3,7 +3,7 @@ class DistanceToJoeysController < ApplicationController
 
   # GET /distance_to_joeys
   def index
-    @distance_to_joeys = DistanceToJoey.all
+    @distance_to_joeys = DistanceToJoey.page(params[:page]).per(10)
   end
 
   # GET /distance_to_joeys/1
