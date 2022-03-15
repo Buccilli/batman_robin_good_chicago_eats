@@ -1,0 +1,57 @@
+<% was_validated = distance_to_joey.errors.any? %>
+
+<%= form_with(model: distance_to_joey, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <!-- Label and input for restaurant_id start -->
+  <div class="form-group">
+    <% restaurant_class = "form-control" %>
+    <% restaurant_was_invalid = distance_to_joey.errors.include?(:restaurant) %>
+
+    <% if was_validated %>
+      <% if restaurant_was_invalid %>
+        <% restaurant_class << " is-invalid" %>
+      <% else %>
+        <% restaurant_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :restaurant_id %>
+    <!-- Input for restaurant_id start -->
+    <%= f.number_field :restaurant_id, class: restaurant_class, placeholder: "Enter restaurant" %>
+    <!-- Input for restaurant_id end -->
+    <% if restaurant_was_invalid %>
+      <% distance_to_joey.errors.full_messages_for(:restaurant).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for restaurant_id end -->
+  <!-- Label and input for minutes_walking start -->
+  <div class="form-group">
+    <% minutes_walking_class = "form-control" %>
+    <% minutes_walking_was_invalid = distance_to_joey.errors.include?(:minutes_walking) %>
+
+    <% if was_validated %>
+      <% if minutes_walking_was_invalid %>
+        <% minutes_walking_class << " is-invalid" %>
+      <% else %>
+        <% minutes_walking_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :minutes_walking %>
+    <!-- Input for minutes_walking start -->
+    <%= f.number_field :minutes_walking, class: minutes_walking_class, placeholder: "Enter minutes walking" %>
+    <!-- Input for minutes_walking end -->
+    <% if minutes_walking_was_invalid %>
+      <% distance_to_joey.errors.full_messages_for(:minutes_walking).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for minutes_walking end -->
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>

@@ -1,0 +1,46 @@
+<div class="card mb-3">
+  <h2 class="card-header h4">
+    Distance To Joey #<%= distance_to_joey.id %>
+  </h2>
+
+  <div class="card-body">
+    <dl class="mb-1">
+      <dt>Restaurant</dt>
+      <!-- Display restaurant_id start -->
+      <dd><%= distance_to_joey.restaurant_id %></dd>
+      <!-- Display restaurant_id end -->
+
+      <dt>Minutes walking</dt>
+      <!-- Display minutes_walking start -->
+      <dd><%= distance_to_joey.minutes_walking %></dd>
+      <!-- Display minutes_walking end -->
+
+    </dl>
+
+    <div class="row">
+      <div class="col">
+        <%= link_to_show_or_back distance_to_joey, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
+      </div>
+
+      <!-- Edit link distance_to_joey start -->
+      <div class="col">
+        <%= link_to edit_distance_to_joey_url(distance_to_joey), class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </div>
+      <!-- Edit link distance_to_joey end -->
+
+      <!-- Delete link distance_to_joey start -->
+      <div class="col">
+        <%= link_to distance_to_joey, method: :delete, data: { confirm: "Do you really want to delete this distance_to_joey?" }, class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </div>
+      <!-- Delete link distance_to_joey end -->
+    </div>
+  </div>
+
+  <div class="card-footer text-muted">
+    Last updated <%= time_ago_in_words(distance_to_joey.updated_at) %> ago
+  </div>
+</div>
