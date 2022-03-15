@@ -8,5 +8,4 @@ class UserResource < ApplicationResource
   # Direct associations
 
   # Indirect associations
-
 end

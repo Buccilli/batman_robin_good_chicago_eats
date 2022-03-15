@@ -2,7 +2,7 @@ class Service < ApplicationRecord
   # Direct associations
 
   has_many   :restaurants,
-             :dependent => :destroy
+             dependent: :destroy
 
   # Indirect associations
 
@@ -13,5 +13,4 @@ class Service < ApplicationRecord
   def to_s
     server_name
   end
-
 end

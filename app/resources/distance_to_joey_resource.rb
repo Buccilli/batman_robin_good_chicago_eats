@@ -10,5 +10,4 @@ class DistanceToJoeyResource < ApplicationResource
   belongs_to :restaurant
 
   # Indirect associations
-
 end

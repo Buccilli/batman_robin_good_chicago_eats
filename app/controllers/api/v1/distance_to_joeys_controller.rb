@@ -13,7 +13,7 @@ class Api::V1::DistanceToJoeysController < Api::V1::GraphitiController
     distance_to_joey = DistanceToJoeyResource.build(params)
 
     if distance_to_joey.save
-      render jsonapi: distance_to_joey, status: 201
+      render jsonapi: distance_to_joey, status: :created
     else
       render jsonapi_errors: distance_to_joey
     end
@@ -33,7 +33,7 @@ class Api::V1::DistanceToJoeysController < Api::V1::GraphitiController
     distance_to_joey = DistanceToJoeyResource.find(params)
 
     if distance_to_joey.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: distance_to_joey
     end

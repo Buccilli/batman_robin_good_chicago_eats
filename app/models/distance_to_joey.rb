@@ -12,5 +12,4 @@ class DistanceToJoey < ApplicationRecord
   def to_s
     restaurant.to_s
   end
-
 end

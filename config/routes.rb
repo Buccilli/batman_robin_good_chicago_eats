@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  scope path: ApplicationResource.endpoint_namespace, defaults: { format: :jsonapi } do
-    scope module: 'api/v1', as: 'api' do
+  scope path: ApplicationResource.endpoint_namespace,
+        defaults: { format: :jsonapi } do
+    scope module: "api/v1", as: "api" do
       resources :services
 
       resources :users
@@ -10,13 +11,12 @@ Rails.application.routes.draw do
       resources :dishes
 
       resources :restaurants
-
     end
-    mount VandalUi::Engine, at: '/vandal'
+    mount VandalUi::Engine, at: "/vandal"
     # your routes go here
   end
   ActiveAdmin.routes(self)
-  root :to => "restaurants#index"
+  root to: "restaurants#index"
   resources :services
   resources :users
   resources :distance_to_joeys

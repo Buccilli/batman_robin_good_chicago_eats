@@ -4,10 +4,10 @@ class Restaurant < ApplicationRecord
   belongs_to :service
 
   has_many   :distance_to_joeys,
-             :dependent => :destroy
+             dependent: :destroy
 
   has_many   :dishes,
-             :dependent => :destroy
+             dependent: :destroy
 
   # Indirect associations
 
@@ -18,5 +18,4 @@ class Restaurant < ApplicationRecord
   def to_s
     good_service
   end
-
 end

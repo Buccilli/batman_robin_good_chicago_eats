@@ -10,5 +10,4 @@ class User < ApplicationRecord
   def to_s
     liked_dishes
   end
-
 end
