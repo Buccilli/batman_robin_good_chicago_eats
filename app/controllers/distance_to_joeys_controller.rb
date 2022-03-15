@@ -1,24 +1,19 @@
 class DistanceToJoeysController < ApplicationController
   before_action :set_distance_to_joey, only: %i[show edit update destroy]
 
-  # GET /distance_to_joeys
   def index
     @q = DistanceToJoey.ransack(params[:q])
     @distance_to_joeys = @q.result(distinct: true).includes(:restaurant).page(params[:page]).per(10)
   end
 
-  # GET /distance_to_joeys/1
   def show; end
 
-  # GET /distance_to_joeys/new
   def new
     @distance_to_joey = DistanceToJoey.new
   end
 
-  # GET /distance_to_joeys/1/edit
   def edit; end
 
-  # POST /distance_to_joeys
   def create
     @distance_to_joey = DistanceToJoey.new(distance_to_joey_params)
 
@@ -34,7 +29,6 @@ class DistanceToJoeysController < ApplicationController
     end
   end
 
-  # PATCH/PUT /distance_to_joeys/1
   def update
     if @distance_to_joey.update(distance_to_joey_params)
       redirect_to @distance_to_joey,
@@ -44,7 +38,6 @@ class DistanceToJoeysController < ApplicationController
     end
   end
 
-  # DELETE /distance_to_joeys/1
   def destroy
     @distance_to_joey.destroy
     message = "DistanceToJoey was successfully deleted."
@@ -57,12 +50,10 @@ class DistanceToJoeysController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_distance_to_joey
     @distance_to_joey = DistanceToJoey.find(params[:id])
   end
 
-  # Only allow a trusted parameter "white list" through.
   def distance_to_joey_params
     params.require(:distance_to_joey).permit(:restaurant_id, :minutes_walking)
   end
