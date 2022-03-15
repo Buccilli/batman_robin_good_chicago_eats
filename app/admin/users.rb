@@ -1,5 +1,7 @@
 ActiveAdmin.register User do
 
+ permit_params :liked_dishes, :desire_to_go_to_restaurant
+
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
