@@ -1,0 +1,265 @@
+<% was_validated = restaurant.errors.any? %>
+
+<%= form_with(model: restaurant, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <!-- Label and input for good_service start -->
+  <div class="form-group">
+    <% good_service_class = "form-control" %>
+    <% good_service_was_invalid = restaurant.errors.include?(:good_service) %>
+
+    <% if was_validated %>
+      <% if good_service_was_invalid %>
+        <% good_service_class << " is-invalid" %>
+      <% else %>
+        <% good_service_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :good_service %>
+    <!-- Input for good_service start -->
+    <%= f.text_field :good_service, class: good_service_class, placeholder: "Enter good service" %>
+    <!-- Input for good_service end -->
+    <% if good_service_was_invalid %>
+      <% restaurant.errors.full_messages_for(:good_service).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for good_service end -->
+  <!-- Label and input for distance_to_joey start -->
+  <div class="form-group">
+    <% distance_to_joey_class = "form-control" %>
+    <% distance_to_joey_was_invalid = restaurant.errors.include?(:distance_to_joey) %>
+
+    <% if was_validated %>
+      <% if distance_to_joey_was_invalid %>
+        <% distance_to_joey_class << " is-invalid" %>
+      <% else %>
+        <% distance_to_joey_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :distance_to_joey %>
+    <!-- Input for distance_to_joey start -->
+    <%= f.number_field :distance_to_joey, class: distance_to_joey_class, placeholder: "Enter distance to joey" %>
+    <!-- Input for distance_to_joey end -->
+    <% if distance_to_joey_was_invalid %>
+      <% restaurant.errors.full_messages_for(:distance_to_joey).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for distance_to_joey end -->
+  <!-- Label and input for price start -->
+  <div class="form-group">
+    <% price_class = "form-control" %>
+    <% price_was_invalid = restaurant.errors.include?(:price) %>
+
+    <% if was_validated %>
+      <% if price_was_invalid %>
+        <% price_class << " is-invalid" %>
+      <% else %>
+        <% price_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :price %>
+    <!-- Input for price start -->
+    <%= f.number_field :price, class: price_class, placeholder: "Enter price" %>
+    <!-- Input for price end -->
+    <% if price_was_invalid %>
+      <% restaurant.errors.full_messages_for(:price).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for price end -->
+  <!-- Label and input for other_comments start -->
+  <div class="form-group">
+    <% other_comment_class = "form-control" %>
+    <% other_comment_was_invalid = restaurant.errors.include?(:other_comment) %>
+
+    <% if was_validated %>
+      <% if other_comment_was_invalid %>
+        <% other_comment_class << " is-invalid" %>
+      <% else %>
+        <% other_comment_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :other_comments %>
+    <!-- Input for other_comments start -->
+    <%= f.text_field :other_comments, class: other_comment_class, placeholder: "Enter other comment" %>
+    <!-- Input for other_comments end -->
+    <% if other_comment_was_invalid %>
+      <% restaurant.errors.full_messages_for(:other_comment).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for other_comments end -->
+  <!-- Label and input for cuisine start -->
+  <div class="form-group">
+    <% cuisine_class = "form-control" %>
+    <% cuisine_was_invalid = restaurant.errors.include?(:cuisine) %>
+
+    <% if was_validated %>
+      <% if cuisine_was_invalid %>
+        <% cuisine_class << " is-invalid" %>
+      <% else %>
+        <% cuisine_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :cuisine %>
+    <!-- Input for cuisine start -->
+    <%= f.text_field :cuisine, class: cuisine_class, placeholder: "Enter cuisine" %>
+    <!-- Input for cuisine end -->
+    <% if cuisine_was_invalid %>
+      <% restaurant.errors.full_messages_for(:cuisine).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for cuisine end -->
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <% name_class = "form-control" %>
+    <% name_was_invalid = restaurant.errors.include?(:name) %>
+
+    <% if was_validated %>
+      <% if name_was_invalid %>
+        <% name_class << " is-invalid" %>
+      <% else %>
+        <% name_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :name %>
+    <!-- Input for name start -->
+    <%= f.text_field :name, class: name_class, placeholder: "Enter name" %>
+    <!-- Input for name end -->
+    <% if name_was_invalid %>
+      <% restaurant.errors.full_messages_for(:name).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for name end -->
+  <!-- Label and input for neighborhood start -->
+  <div class="form-group">
+    <% neighborhood_class = "form-control" %>
+    <% neighborhood_was_invalid = restaurant.errors.include?(:neighborhood) %>
+
+    <% if was_validated %>
+      <% if neighborhood_was_invalid %>
+        <% neighborhood_class << " is-invalid" %>
+      <% else %>
+        <% neighborhood_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :neighborhood %>
+    <!-- Input for neighborhood start -->
+    <%= f.text_field :neighborhood, class: neighborhood_class, placeholder: "Enter neighborhood" %>
+    <!-- Input for neighborhood end -->
+    <% if neighborhood_was_invalid %>
+      <% restaurant.errors.full_messages_for(:neighborhood).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for neighborhood end -->
+  <!-- Label and input for service_id start -->
+  <div class="form-group">
+    <% service_class = "form-control" %>
+    <% service_was_invalid = restaurant.errors.include?(:service) %>
+
+    <% if was_validated %>
+      <% if service_was_invalid %>
+        <% service_class << " is-invalid" %>
+      <% else %>
+        <% service_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :service_id %>
+    <!-- Input for service_id start -->
+    <%= f.number_field :service_id, class: service_class, placeholder: "Enter service" %>
+    <!-- Input for service_id end -->
+    <% if service_was_invalid %>
+      <% restaurant.errors.full_messages_for(:service).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for service_id end -->
+  <!-- Label and input for added_by start -->
+  <div class="form-group">
+    <% added_by_class = "form-control" %>
+    <% added_by_was_invalid = restaurant.errors.include?(:added_by) %>
+
+    <% if was_validated %>
+      <% if added_by_was_invalid %>
+        <% added_by_class << " is-invalid" %>
+      <% else %>
+        <% added_by_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :added_by %>
+    <!-- Input for added_by start -->
+    <%= f.number_field :added_by, class: added_by_class, placeholder: "Enter added by" %>
+    <!-- Input for added_by end -->
+    <% if added_by_was_invalid %>
+      <% restaurant.errors.full_messages_for(:added_by).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for added_by end -->
+  <!-- Label and input for desire_to_go_to_restaurant start -->
+  <div class="form-group">
+    <% desire_to_go_to_restaurant_class = "form-control" %>
+    <% desire_to_go_to_restaurant_was_invalid = restaurant.errors.include?(:desire_to_go_to_restaurant) %>
+
+    <% if was_validated %>
+      <% if desire_to_go_to_restaurant_was_invalid %>
+        <% desire_to_go_to_restaurant_class << " is-invalid" %>
+      <% else %>
+        <% desire_to_go_to_restaurant_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :desire_to_go_to_restaurant %>
+    <!-- Input for desire_to_go_to_restaurant start -->
+    <%= f.number_field :desire_to_go_to_restaurant, class: desire_to_go_to_restaurant_class, placeholder: "Enter desire to go to restaurant" %>
+    <!-- Input for desire_to_go_to_restaurant end -->
+    <% if desire_to_go_to_restaurant_was_invalid %>
+      <% restaurant.errors.full_messages_for(:desire_to_go_to_restaurant).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for desire_to_go_to_restaurant end -->
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>
