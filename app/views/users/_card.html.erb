@@ -1,0 +1,46 @@
+<div class="card mb-3">
+  <h2 class="card-header h4">
+    User #<%= user.id %>
+  </h2>
+
+  <div class="card-body">
+    <dl class="mb-1">
+      <dt>Liked dishes</dt>
+      <!-- Display liked_dishes start -->
+      <dd><%= user.liked_dishes %></dd>
+      <!-- Display liked_dishes end -->
+
+      <dt>Desire to go to restaurant</dt>
+      <!-- Display desire_to_go_to_restaurant start -->
+      <dd><%= user.desire_to_go_to_restaurant %></dd>
+      <!-- Display desire_to_go_to_restaurant end -->
+
+    </dl>
+
+    <div class="row">
+      <div class="col">
+        <%= link_to_show_or_back user, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
+      </div>
+
+      <!-- Edit link user start -->
+      <div class="col">
+        <%= link_to edit_user_url(user), class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </div>
+      <!-- Edit link user end -->
+
+      <!-- Delete link user start -->
+      <div class="col">
+        <%= link_to user, method: :delete, data: { confirm: "Do you really want to delete this user?" }, class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </div>
+      <!-- Delete link user end -->
+    </div>
+  </div>
+
+  <div class="card-footer text-muted">
+    Last updated <%= time_ago_in_words(user.updated_at) %> ago
+  </div>
+</div>
