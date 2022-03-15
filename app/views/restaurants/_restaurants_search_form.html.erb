@@ -31,6 +31,18 @@
   </div>
 
   <div class="form-group">
+    <%= f.label :service_id, "Service" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :service_id_gteq, :class => "form-control", :placeholder => "Service greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :service_id_lteq, :class => "form-control", :placeholder => "Service less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
     <%= f.label :neighborhood_cont, "Neighborhood contains" %>
     <%= f.text_field :neighborhood_cont, :class => "form-control", :placeholder => "Neighborhood contains" %>
   </div>
@@ -118,11 +130,6 @@
   <div class="form-group">
     <%= f.label :dishes_must_get_cont, "Dishes must_get contains" %>
     <%= f.text_field :dishes_must_get_cont, :class => "form-control", :placeholder => "Dishes must_get contains" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :service_server_name_cont, "Service server_name contains" %>
-    <%= f.text_field :service_server_name_cont, :class => "form-control", :placeholder => "Service server_name contains" %>
   </div>
 
 

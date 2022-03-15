@@ -1,8 +1,6 @@
 class Restaurant < ApplicationRecord
   # Direct associations
 
-  belongs_to :service
-
   has_many   :distance_to_joeys,
              dependent: :destroy
 

@@ -3,12 +3,10 @@ class ServicesController < ApplicationController
 
   def index
     @q = Service.ransack(params[:q])
-    @services = @q.result(distinct: true).includes(:restaurants).page(params[:page]).per(10)
+    @services = @q.result(distinct: true).page(params[:page]).per(10)
   end
 
-  def show
-    @restaurant = Restaurant.new
-  end
+  def show; end
 
   def new
     @service = Service.new
