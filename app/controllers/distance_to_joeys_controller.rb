@@ -42,8 +42,14 @@ class DistanceToJoeysController < ApplicationController
   # DELETE /distance_to_joeys/1
   def destroy
     @distance_to_joey.destroy
-    redirect_to distance_to_joeys_url, notice: 'Distance to joey was successfully destroyed.'
+    message = "DistanceToJoey was successfully deleted."
+    if Rails.application.routes.recognize_path(request.referrer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
+      redirect_back fallback_location: request.referrer, notice: message
+    else
+      redirect_to distance_to_joeys_url, notice: message
+    end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
