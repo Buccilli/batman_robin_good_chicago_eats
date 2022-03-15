@@ -24,7 +24,12 @@ class DistanceToJoeysController < ApplicationController
     @distance_to_joey = DistanceToJoey.new(distance_to_joey_params)
 
     if @distance_to_joey.save
-      redirect_to @distance_to_joey, notice: 'Distance to joey was successfully created.'
+      message = 'DistanceToJoey was successfully created.'
+      if Rails.application.routes.recognize_path(request.referrer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
+        redirect_back fallback_location: request.referrer, notice: message
+      else
+        redirect_to @distance_to_joey, notice: message
+      end
     else
       render :new
     end

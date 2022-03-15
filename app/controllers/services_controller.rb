@@ -8,6 +8,7 @@ class ServicesController < ApplicationController
 
   # GET /services/1
   def show
+    @restaurant = Restaurant.new
   end
 
   # GET /services/new

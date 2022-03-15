@@ -1,0 +1,22 @@
+<!-- Form distance_to_joey start -->
+<%= form_with(model: @distance_to_joey, local: true) do |f| %>
+<!-- Form distance_to_joey end -->
+
+  <!-- Label and input for restaurant_id start -->
+  <!-- Input for restaurant_id start -->
+  <%= f.hidden_field :restaurant_id, value: @restaurant.id %>
+  <!-- Input for restaurant_id end -->
+  <!-- Label and input for restaurant_id end -->
+
+  <!-- Label and input for minutes_walking start -->
+  <div class="form-group">
+    <%= f.label :minutes_walking %>
+
+    <!-- Input for minutes_walking start -->
+    <%= f.text_field :minutes_walking, class: "form-control" %>
+    <!-- Input for minutes_walking end -->
+  </div>
+  <!-- Label and input for minutes_walking end -->
+
+  <%= f.submit "Create distance to joey", class: "btn btn-block btn-outline-secondary" %>
+<% end %>

@@ -1,0 +1,102 @@
+<!-- Form restaurant start -->
+<%= form_with(model: @restaurant, local: true) do |f| %>
+<!-- Form restaurant end -->
+
+  <!-- Label and input for good_service start -->
+  <div class="form-group">
+    <%= f.label :good_service %>
+
+    <!-- Input for good_service start -->
+    <%= f.text_field :good_service, class: "form-control" %>
+    <!-- Input for good_service end -->
+  </div>
+  <!-- Label and input for good_service end -->
+
+  <!-- Label and input for distance_to_joey start -->
+  <div class="form-group">
+    <%= f.label :distance_to_joey %>
+
+    <!-- Input for distance_to_joey start -->
+    <%= f.text_field :distance_to_joey, class: "form-control" %>
+    <!-- Input for distance_to_joey end -->
+  </div>
+  <!-- Label and input for distance_to_joey end -->
+
+  <!-- Label and input for price start -->
+  <div class="form-group">
+    <%= f.label :price %>
+
+    <!-- Input for price start -->
+    <%= f.text_field :price, class: "form-control" %>
+    <!-- Input for price end -->
+  </div>
+  <!-- Label and input for price end -->
+
+  <!-- Label and input for other_comments start -->
+  <div class="form-group">
+    <%= f.label :other_comments %>
+
+    <!-- Input for other_comments start -->
+    <%= f.text_field :other_comments, class: "form-control" %>
+    <!-- Input for other_comments end -->
+  </div>
+  <!-- Label and input for other_comments end -->
+
+  <!-- Label and input for cuisine start -->
+  <div class="form-group">
+    <%= f.label :cuisine %>
+
+    <!-- Input for cuisine start -->
+    <%= f.text_field :cuisine, class: "form-control" %>
+    <!-- Input for cuisine end -->
+  </div>
+  <!-- Label and input for cuisine end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <%= f.label :name %>
+
+    <!-- Input for name start -->
+    <%= f.text_field :name, class: "form-control" %>
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for neighborhood start -->
+  <div class="form-group">
+    <%= f.label :neighborhood %>
+
+    <!-- Input for neighborhood start -->
+    <%= f.text_field :neighborhood, class: "form-control" %>
+    <!-- Input for neighborhood end -->
+  </div>
+  <!-- Label and input for neighborhood end -->
+
+  <!-- Label and input for service_id start -->
+  <!-- Input for service_id start -->
+  <%= f.hidden_field :service_id, value: @service.id %>
+  <!-- Input for service_id end -->
+  <!-- Label and input for service_id end -->
+
+  <!-- Label and input for added_by start -->
+  <div class="form-group">
+    <%= f.label :added_by %>
+
+    <!-- Input for added_by start -->
+    <%= f.text_field :added_by, class: "form-control" %>
+    <!-- Input for added_by end -->
+  </div>
+  <!-- Label and input for added_by end -->
+
+  <!-- Label and input for desire_to_go_to_restaurant start -->
+  <div class="form-group">
+    <%= f.label :desire_to_go_to_restaurant %>
+
+    <!-- Input for desire_to_go_to_restaurant start -->
+    <%= f.text_field :desire_to_go_to_restaurant, class: "form-control" %>
+    <!-- Input for desire_to_go_to_restaurant end -->
+  </div>
+  <!-- Label and input for desire_to_go_to_restaurant end -->
+
+  <%= f.submit "Create restaurant", class: "btn btn-block btn-outline-secondary" %>
+<% end %>
