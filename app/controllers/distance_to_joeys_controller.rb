@@ -3,7 +3,8 @@ class DistanceToJoeysController < ApplicationController
 
   # GET /distance_to_joeys
   def index
-    @distance_to_joeys = DistanceToJoey.page(params[:page]).per(10)
+    @q = DistanceToJoey.ransack(params[:q])
+    @distance_to_joeys = @q.result(:distinct => true).includes(:restaurant).page(params[:page]).per(10)
   end
 
   # GET /distance_to_joeys/1
